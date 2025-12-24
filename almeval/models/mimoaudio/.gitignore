@@ -1,0 +1,10 @@
+build/
+dist/
+checkpoints/
+*.egg-info/
+*.egg
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz

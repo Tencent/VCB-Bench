@@ -1,0 +1,8 @@
+__pycache__
+*.wav
+!assets/*.wav
+*.txt
+*.pcm
+*.whl
+Step-Audio-2-mini
+Step-Audio-2-mini-Base
