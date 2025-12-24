@@ -1,6 +1,17 @@
-<h1 align="center">
-    VCB Bench Evalkit
-</h1>
+<div align="center">
+    <h1>
+    VCB-Bench
+    </h1>
+    <p>
+    <h3><b>Voice Chat Bot Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents</b></h3>
+    </p>
+    <p>
+    </p>
+    <a href="https://arxiv.org/abs/2510.11098"><img src="https://img.shields.io/badge/arXiv-2502.17810-B31B1B.svg" alt="arXiv"></a>
+    <a href="https://github.com/Tencent/VCB-Bench"><img src="https://img.shields.io/badge/GitHub-Repo-181717.svg" alt="GitHub"></a>
+    <a href="https://huggingface.co/datasets/tencent/VCB-Bench"><img src="https://img.shields.io/badge/Hugging%20Face-Data%20Page-yellow" alt="Hugging Face"></a>
+
+</div>
 
 
 ## Introduction
@@ -16,21 +27,17 @@ Voice Chat Bot Bench (VCB Bench) is a high-quality Chinese benchmark built entir
 ### Installation:
 
 ```bash
-git clone https://github.com/193746/VCB-Bench-Evalkit.git
-cd VCB-Bench-Evalkit
+git clone https://github.com/Tencent/VCB-Bench.git
+cd VCB-Bench
 pip install -r requirements.txt
 ```
 Note: To evaluate Qwen3-omni, please replace it with the environment it requires.
 
 ### Download Dataset:
-
-```bash
-cd data/downloaded_datasets
-tar zxvf vcbbench.tar.gz
-```
+Download the dataset from [Hugging Face](https://huggingface.co/datasets/tencent/VCB-Bench) and place the 'vcb_bench' into 'data/downloaded_datasets'.
 
 ### Evaluation:
-This code is adapted from [Kimi-Audio](https://github.com/MoonshotAI/Kimi-Audio-Evalkit), where you can find more details about the evaluation commands.
+This code is adapted from [Kimi-Audio-Evalkit](https://github.com/MoonshotAI/Kimi-Audio-Evalkit), where you can find more details about the evaluation commands.
 
 (1) Inference + Evaluation:
 ```
@@ -343,4 +350,19 @@ python sumup_eval.py --model {model_name} --export_excel --output_file my_result
   </tbody>
 </table>
 
+## Acknowledge
+We borrow some code from [Kimi-Audio-Evalkit](https://github.com/MoonshotAI/Kimi-Audio-Evalkit), [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice), [Baichuan-Audio](https://github.com/baichuan-inc/Baichuan-Audio), [Kimi-Audio](https://github.com/MoonshotAI/Kimi-Audio), [Mimo-Audio](https://github.com/XiaomiMiMo/MiMo-Audio), [Step-Audio2](https://github.com/stepfun-ai/Step-Audio2), and [StepAudio](https://github.com/stepfun-ai/Step-Audio).
+
+## Citation
+```
+@misc{hu2025vcbbenchevaluationbenchmark,
+      title={VCB Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents}, 
+      author={Jiliang Hu and Wenfu Wang and Zuchao Li and Chenxing Li and Yiyang Zhao and Hanzhao Li and Liqiang Zhang and Meng Yu and Dong Yu},
+      year={2025},
+      eprint={2510.11098},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2510.11098}, 
+}
+```
 
