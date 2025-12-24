@@ -1,12 +1,7 @@
 <div align="center">
-    <h1>
-    VCB-Bench
-    </h1>
-    <p>
-    <h3><b>Voice Chat Bot Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents</b></h3>
-    </p>
-    <p>
-    </p>
+    <h2>
+    VCB-Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents
+    </h2>
     <a href="https://arxiv.org/abs/2510.11098"><img src="https://img.shields.io/badge/arXiv-2502.17810-B31B1B.svg" alt="arXiv"></a>
     <a href="https://github.com/Tencent/VCB-Bench"><img src="https://img.shields.io/badge/GitHub-Repo-181717.svg" alt="GitHub"></a>
     <a href="https://huggingface.co/datasets/tencent/VCB-Bench"><img src="https://img.shields.io/badge/Hugging%20Face-Data%20Page-yellow" alt="Hugging Face"></a>
@@ -16,11 +11,11 @@
 
 ## Introduction
 
-Voice Chat Bot Bench (VCB Bench) is a high-quality Chinese benchmark built entirely on real human speech. It evaluates large audio language models (LALMs) along three complementary dimensions: 
+<b>Voice Chat Bot Bench (VCB Bench)</b> is a high-quality Chinese benchmark built entirely on real human speech. It evaluates large audio language models (LALMs) along three complementary dimensions: 
 <br>
-(1) Instruction following: Text Instruction Following (TIF), Speech Instruction Following (SIF), English Text Instruction Following (TIF-En), English Speech Instruction Following (SIF-En) and Multi-turn Dialog (MTD);<br>
-(2) Knowledge: General Knowledge (GK), Mathematical Logic (ML), Discourse Comprehension (DC) and Story Continuation (SC).<br>
-(3) Robustness: Speaker Variations (SV), Environmental Variations (EV), and Content Variations (CV).
+(1) <b>Instruction following</b>: Text Instruction Following (TIF), Speech Instruction Following (SIF), English Text Instruction Following (TIF-En), English Speech Instruction Following (SIF-En) and Multi-turn Dialog (MTD);<br>
+(2) <b>Knowledge</b>: General Knowledge (GK), Mathematical Logic (ML), Discourse Comprehension (DC) and Story Continuation (SC).<br>
+(3) <b>Robustness</b>: Speaker Variations (SV), Environmental Variations (EV), and Content Variations (CV).
 
 ## Getting Started
 
