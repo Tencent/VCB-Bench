@@ -1,7 +1,7 @@
 <div align="center">
-    <h2>
+    <h1>
     VCB-Bench: An Evaluation Benchmark for Audio-Grounded Large Language Model Conversational Agents
-    </h2>
+    </h1>
     <a href="https://arxiv.org/abs/2510.11098"><img src="https://img.shields.io/badge/arXiv-2502.17810-B31B1B.svg" alt="arXiv"></a>
     <a href="https://github.com/Tencent/VCB-Bench"><img src="https://img.shields.io/badge/GitHub-Repo-181717.svg" alt="GitHub"></a>
     <a href="https://huggingface.co/datasets/tencent/VCB-Bench"><img src="https://img.shields.io/badge/Hugging%20Face-Data%20Page-yellow" alt="Hugging Face"></a>
