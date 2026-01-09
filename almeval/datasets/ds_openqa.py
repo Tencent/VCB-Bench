@@ -233,7 +233,7 @@ class AudioOpenQADataset(AudioBaseDataset):
                 eval_file)
             judge_model_name = 'vb-ifeval'
         else:
-            if method == "gpt-4o-audio":
+            if method == "gpt-4o-audio" or ("gemini" in method and "pro" in method):
                 prompt = OPEN_QA_WAO_PROMPT
             else:
                 method = 'gpt-4o-mini'
