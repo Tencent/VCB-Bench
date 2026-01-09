@@ -148,7 +148,8 @@ def load_performance_data(model, subset_name, result_dir, wasr=False):
     # Check if it's an SIF subset
     # import pdb;pdb.set_trace()
     if subset_name in DATASET_STRUCTURE["SIF(Speech Instruction Following)"]["subsets"] or subset_name in DATASET_STRUCTURE["SIF-En(English Speech Instruction Following)"]["subsets"]:
-        file_path = f"{result_dir}/{model}/{subset_name}/{model}_{subset_name}_gpt-4o-audio_performance.json"
+       #  file_path = f"{result_dir}/{model}/{subset_name}/{model}_{subset_name}_gpt-4o-audio_performance.json"
+       file_path = f"{result_dir}/{model}/{subset_name}/{model}_{subset_name}_gemini-2.5-pro_performance.json"
     else:
         if not wasr:
             file_path = f"{result_dir}/{model}/{subset_name}/{model}_{subset_name}_default_performance.json"

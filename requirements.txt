@@ -99,3 +99,4 @@ wids==0.1.11
 x_transformers==2.8.4
 xxhash==3.5.0
 zhconv==1.4.3
+google-genai==1.56.0
