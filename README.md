@@ -343,6 +343,9 @@ python sumup_eval.py --model {model_name} --export_excel --output_file my_result
       <td>Qwen3-Omni-Instruct</td>
     </tr>
     <tr>
+      <td>FunAudioChat</td>
+    </tr>
+    <tr>
       <td class="model-type" rowspan="4">Pretrain Model</td>
       <td>Qwen2-Audio-7B</td>
     </tr>
@@ -359,7 +362,7 @@ python sumup_eval.py --model {model_name} --export_excel --output_file my_result
 </table>
 
 ## Acknowledge
-We borrow some code from [Kimi-Audio-Evalkit](https://github.com/MoonshotAI/Kimi-Audio-Evalkit), [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice), [Baichuan-Audio](https://github.com/baichuan-inc/Baichuan-Audio), [Kimi-Audio](https://github.com/MoonshotAI/Kimi-Audio), [Mimo-Audio](https://github.com/XiaomiMiMo/MiMo-Audio), [Step-Audio2](https://github.com/stepfun-ai/Step-Audio2), and [StepAudio](https://github.com/stepfun-ai/Step-Audio).
+We borrow some code from [Kimi-Audio-Evalkit](https://github.com/MoonshotAI/Kimi-Audio-Evalkit), [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice), [Baichuan-Audio](https://github.com/baichuan-inc/Baichuan-Audio), [Kimi-Audio](https://github.com/MoonshotAI/Kimi-Audio), [Mimo-Audio](https://github.com/XiaomiMiMo/MiMo-Audio), [Step-Audio2](https://github.com/stepfun-ai/Step-Audio2), [StepAudio](https://github.com/stepfun-ai/Step-Audio) and [Fun-Audio-Chat](https://github.com/FunAudioLLM/Fun-Audio-Chat).
 
 ## Citation
 ```
