@@ -312,7 +312,7 @@ python sumup_eval.py --model {model_name} --export_excel --output_file my_result
   </thead>
   <tbody>
     <tr>
-      <td class="model-type" rowspan="10">Chat Model</td>
+      <td class="model-type" rowspan="11">Chat Model</td>
       <td>Qwen2-Audio-7B-Instruct</td>
     </tr>
     <tr>
