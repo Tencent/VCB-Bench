@@ -19,5 +19,5 @@ sys.path.append(stepaudio2_path)
 mimoaudio_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'models', 'mimoaudio'))
 sys.path.append(mimoaudio_path)
 
-speechlm_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'models', 'SpeechLM_SFT_251023'))
-sys.path.append(speechlm_path)
+funaudio_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'models', 'funaudio'))
+sys.path.append(funaudio_path)

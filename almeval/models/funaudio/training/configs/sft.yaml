@@ -1,0 +1,49 @@
+### model
+model_name_or_path: ../pretrained_models/Fun-Audio-Chat-8B
+
+### method
+stage: sft
+do_train: true
+do_eval: true
+finetuning_type: full
+flash_attn: fa2
+freeze_vision_tower: false
+freeze_multi_modal_projector: false
+deepspeed: configs/deepspeed/ds_z2_config.json
+print_param_status: true
+
+### dataset
+dataset: spoken-alpaca-gpt4_1k
+template: funaudiochat
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 32
+preprocessing_batch_size: 10000
+neat_packing: true
+
+### output
+output_dir: saves/Fun-Audio-Chat-8B/SFT25122101
+logging_steps: 10
+save_strategy: steps
+save_steps: 1000
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 6
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine_with_min_lr
+lr_scheduler_kwargs: {min_lr_rate: 0.1}
+warmup_ratio: 0.02
+bf16: true
+report_to: none
+ddp_timeout: 180000000
+disable_gradient_checkpointing: false
+
+### eval
+val_size: 0.01
+per_device_eval_batch_size: 6
+eval_strategy: steps
+eval_steps: 1000
