@@ -83,10 +83,7 @@ CUDA_VISIBLE_DEVICES=0 python run_audio.py --model GLM4-Voice --data emotional_c
 
 ### Format Result:
 ```
-python sumup_eval.py --model {model_name}
-```
-```
-python sumup_eval.py --model {model_name} --export_excel --output_file my_results.xlsx
+python sumup_eval.py --model {model_name} --result_dir ./eval_result --export_excel --output_file my_results.xlsx --wasr
 ```
 
 ## Supported Datasets and Models

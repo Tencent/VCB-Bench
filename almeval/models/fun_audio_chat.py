@@ -31,33 +31,43 @@ class FunAudioChat(BaseModel):
         super().__init__()
 
     def get_prompt(self, msg: dict):
+        # https://github.com/FunAudioLLM/Fun-Audio-Chat?tab=readme-ov-file#-evaluation
+        if msg["meta"]["dataset_name"] in ["logical_reasoning","basic_math","math","general_knowledge","discourse_comprehension"]:
+            return DEFAULT_S2M_PROMPT
         if msg["task_type"]=="audio2audio":
-            # https://github.com/FunAudioLLM/Fun-Audio-Chat/blob/main/examples/infer_s2s.py
             return SPOKEN_S2M_PROMPT
         else:
-            # https://github.com/FunAudioLLM/Fun-Audio-Chat/blob/main/examples/infer_s2t.py
             return DEFAULT_S2T_PROMPT
 
     def generate_inner(self, msg: dict):
         audio = msg['audio']
         task_type=msg['task_type']
-        # import pdb;pdb.set_trace()
-        if len(audio) > 1:
-            raise NotImplementedError
 
         prompt = self.get_prompt(msg)
         messages = [{"role": "system", "content": prompt}]
 
-        audio = audio[0]
-        text = msg["text"]
         if msg['meta']['interactive'] == 'Audio-analysis':
+            if len(audio) > 1:
+                raise NotImplementedError
+            audio = audio[0]
+            text = msg["text"]
             messages.append({"role": "user", "content": AUDIO_TEMPLATE + "\n" + text})
+            _audio = [librosa.load(audio, sr=16000)[0]]
         else:
-            messages.append({"role": "user", "content": AUDIO_TEMPLATE})
-        
-        audio = [librosa.load(audio, sr=16000)[0]]
+            _audio = []
+            for i in range(len(audio)):
+                if len(audio)>1:
+                    if msg['meta']['context'] is None:
+                        raise ValueError("Assistant's text must be provided for multi-turn dialog task.")
+                    text=msg['meta']['context']
+                if i%2==0:
+                    messages.append({"role": "user", "content": AUDIO_TEMPLATE})
+                    _audio.append(librosa.load(audio[i], sr=16000)[0])
+                else:                    
+                    messages.append({"role": "assistant", "content": text[i]})
+
         text = self.processor.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
-        inputs = self.processor(text=text, audio=audio, return_tensors="pt", return_token_type_ids=False).to(self.model.device)
+        inputs = self.processor(text=text, audio=_audio, return_tensors="pt", return_token_type_ids=False).to(self.model.device)
 
         if task_type=="audio2audio":
             gen_kwargs = DEFAULT_S2M_GEN_KWARGS.copy()
@@ -83,5 +93,4 @@ class FunAudioChat(BaseModel):
             return "", generate_text, (self.cosyvoice_model.sample_rate, speech.detach().cpu())
         else:
             return "", generate_text, None
-
 
