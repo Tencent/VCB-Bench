@@ -13,6 +13,8 @@
 
 </div>
 
+## News
+2026/04/07: This paper has been accepted by ACL 2026 Findings!
 
 ## Introduction
 
